@@ -24,13 +24,13 @@ public class Car {
     @Enumerated(EnumType.STRING)
     private CarCategory carCategory;
 
-    @OneToOne(mappedBy = "car")
-    private CarHireDetails carHireDetails;
-
-    @OneToOne(mappedBy = "car")
-    private List<ServinceHistory> serviceHistory;
-
     @OneToMany(mappedBy = "car")
+    private List<CarHireDetails> carHireDetails;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ServiceHistory> serviceHistory;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MotDetails> motDetails;
 
     @OneToOne(mappedBy = "car")
