@@ -17,7 +17,7 @@ public class Car {
     private String registrationNumber;
     private Status status;
 
-    @Column(name = "fueql_type")
+    @Column(name = "fuel_type")
     private String fuelType;
 
     @Column(name = "car_category")
