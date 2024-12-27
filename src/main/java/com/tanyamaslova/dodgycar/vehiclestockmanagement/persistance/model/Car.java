@@ -16,11 +16,8 @@ public class Car {
     private String model;
     private String registrationNumber;
     private Status status;
-
-    @Column(name = "fuel_type")
     private String fuelType;
 
-    @Column(name = "car_category")
     @Enumerated(EnumType.STRING)
     private CarCategory carCategory;
 
