@@ -1,8 +1,9 @@
-package com.tanyamaslova.dodgycar.vehiclestockmanagement.persistance.model;
+package com.tanyamaslova.dodgycar.vehiclestockmanagement.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -25,10 +26,10 @@ public class Car {
     private List<CarHireDetails> carHireDetails;
 
     @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ServiceHistory> serviceHistory;
+    private List<ServiceHistory> serviceHistory = new ArrayList<>();
 
     @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MotDetails> motDetails;
+    private List<MotDetails> motDetails = new ArrayList<>();
 
     @OneToOne(mappedBy = "car")
     private InsuranceDetails insuranceDetails;

@@ -1,4 +1,4 @@
-package com.tanyamaslova.dodgycar.vehiclestockmanagement.persistance.model;
+package com.tanyamaslova.dodgycar.vehiclestockmanagement.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;

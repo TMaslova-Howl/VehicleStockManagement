@@ -1,4 +1,4 @@
-package com.tanyamaslova.dodgycar.vehiclestockmanagement.persistance.model;
+package com.tanyamaslova.dodgycar.vehiclestockmanagement.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -10,6 +10,8 @@ public class CarHireDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Car car;
     @Version
     private Integer version;
 

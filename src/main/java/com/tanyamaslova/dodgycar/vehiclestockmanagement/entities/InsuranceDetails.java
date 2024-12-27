@@ -1,4 +1,4 @@
-package com.tanyamaslova.dodgycar.vehiclestockmanagement.persistance.model;
+package com.tanyamaslova.dodgycar.vehiclestockmanagement.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -20,6 +20,9 @@ public class InsuranceDetails {
     private LocalDate insuranceStartDate;
     @Column(name="insurance_end_date")
     private LocalDate insuranceEndDate;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="car_id")
+    private Car car;
     @Version
     private Integer version;
 }
